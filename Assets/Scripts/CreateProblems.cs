@@ -27,7 +27,7 @@ public class CreateProblems : MonoBehaviour
     public void BasicOperations(int operacion)
     {
         op = operacion;
-        maxRange = PlayerPrefs.GetInt("MaxRange");
+        maxRange = PlayerPrefs.GetInt("MaxRange", 10);
         inputText.text = ""; images[3].SetActive(false);
         switch (operacion)
         {
@@ -65,7 +65,7 @@ public class CreateProblems : MonoBehaviour
     void Multiplicacion()
     {
         x = Random.Range(1, maxRange); y = Random.Range(1, maxRange); res = x * y;
-        problemText.text = x + " * " + y + " = ?";
+        problemText.text = x + " x " + y + " = ?";
     }
 
     void Division()
